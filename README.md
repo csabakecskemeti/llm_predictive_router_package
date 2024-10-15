@@ -46,4 +46,32 @@ response, context, selected_model = router.chat(
     max_tokens=100,    # Limit the response length
     verbose=True
 )
+
+response, context, selected_model = router.chat(
+    "Tell me a story about a cat",
+    curr_ctx=context,
+    model_store_entry=selected_model,
+    temperature=0.5,   # Lower temperature for more focused responses
+    max_tokens=512,    # Limit the response length
+    verbose=True
+)
+
+response, context, selected_model = router.chat(
+    "Now explain the biology of the cat",
+    curr_ctx=context,
+    model_store_entry=selected_model,
+    temperature=0.5,   # Lower temperature for more focused responses
+    max_tokens=512,    # Limit the response length
+    verbose=True
+)
+
+# this will escalate the model as we getting into specific domain details
+response, context, selected_model = router.chat(
+    "Get into the details of his matabolism, especially interested the detailed role of the liver",
+    curr_ctx=context,
+    model_store_entry=selected_model,
+    temperature=0.5,   # Lower temperature for more focused responses
+    max_tokens=512,    # Limit the response length
+    verbose=True
+)
 ```
