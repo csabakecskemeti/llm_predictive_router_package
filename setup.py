@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='llm-predictive-router',
-    version='0.1',
+    version='0.2',
     description='A package to route chat requests between LLMs based on prompt classification',
     long_description=long_description,
     long_description_content_type="text/markdown",
