@@ -11,7 +11,7 @@ pip install llm-predictive-router
 
 ## Example usage
 
-```
+```python
 # Example Usage
 from llm_predictive_router import LLMRouter
 
