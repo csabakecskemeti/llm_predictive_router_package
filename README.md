@@ -8,6 +8,7 @@ You can install the package using pip:
 
 ```bash
 pip install llm-predictive-router
+```
 
 ## Example usage
 
