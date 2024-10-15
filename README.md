@@ -12,6 +12,7 @@ pip install llm-predictive-router
 ## Example usage
 
 ```
+# Example Usage
 from llm_predictive_router import LLMRouter
 
 # Define model configuration
@@ -37,5 +38,11 @@ config = {
 
 router = LLMRouter(config)
 
-response, context, selected_model = router.chat("Hello", verbose=True)
+# Example call with customized temperature and max_tokens
+response, context, selected_model = router.chat(
+    "Hello", 
+    temperature=0.5,   # Lower temperature for more focused responses
+    max_tokens=100,    # Limit the response length
+    verbose=True
+)
 ```
