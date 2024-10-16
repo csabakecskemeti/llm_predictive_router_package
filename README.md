@@ -81,10 +81,15 @@ response, context, selected_model = router.chat(
 
 ## Model Store JSON
 
-The **model store** JSON defines the configuration of both the small and large LLM models that the router will switch between based on the prompt classification. Here’s the structure of the model store:
+The **model store** JSON defines the configuration of both the small and large LLM models that the router will switch between based on the prompt classification. Additionally, it includes a special **classifier** model entry used to predict the complexity of the user's prompt.
+
+### Example Model Store Structure:
 
 ```json
 {
+  "classifier": {
+    "model_id": "DevQuasar/roberta-prompt_classifier-v0.1"
+  },
   "small_llm": {
     "escalation_order": 0,
     "url": "http://localhost:1234/v1",
@@ -103,6 +108,12 @@ The **model store** JSON defines the configuration of both the small and large L
 ```
 
 ### Explanation of Fields:
+
+#### Classifier Entry:
+- **classifier**: This special entry defines the model used to classify the complexity of the user's input. The `model_id` field specifies the model that is fine-tuned for prompt classification.
+  - **model_id**: The identifier of the classifier model (e.g., Roberta-based classifier). This model predicts the complexity of the user prompt, allowing the router to choose the appropriate LLM for the response. It does not generate text but informs the routing logic.
+
+#### LLM Entries:
 - **escalation_order**: Defines the order in which models are escalated. Lower values are selected for less complex prompts, while higher values indicate more complex prompts.
 - **url**: The URL of the API endpoint where the model is hosted.
 - **api_key**: The API key required to authenticate with the model service.
@@ -110,6 +121,7 @@ The **model store** JSON defines the configuration of both the small and large L
 - **max_ctx**: Maximum context size (in tokens) the model can handle.
 
 ---
+
 
 ## `router.chat` Method Documentation
 
