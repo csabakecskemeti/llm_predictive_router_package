@@ -179,4 +179,11 @@ Key components of the solution include:
 - **Router**: Responsible for selecting and switching between models dynamically, depending on the classification result and current context.
 - **Chat Handling**: Manages the conversation, tracks context, and interacts with the models to generate coherent responses.
 
+## More info
+#### Pypi
+(llm-predictive-router)[https://pypi.org/project/llm-predictive-router/]
+
+#### Homepage
+[devquasar.com/llm-predictive-router](https://devquasar.com/llm-predictive-router/)
+
 This approach provides a balanced trade-off between model performance and response quality, allowing for optimal resource usage while maintaining high-quality conversational outputs.
